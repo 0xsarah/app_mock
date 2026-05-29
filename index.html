@@ -3,426 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaiya — App Mockup v4</title>
+<title>Kaiya — App Mockup</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#f0efe8;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 16px 48px;}
+.page-label{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#999;margin-bottom:8px;}
+.page-title{font-size:22px;font-weight:500;color:#1a1a1a;margin-bottom:4px;letter-spacing:-.01em;}
+.page-sub{font-size:13px;color:#888;margin-bottom:28px;}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background: #f5f5f0;
-    color: #1a1a1a;
-    min-height: 100vh;
-  }
+/* Phone */
+.phone{width:320px;background:#fff;border:0.5px solid #ccc;border-radius:40px;overflow:hidden;height:640px;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.13);}
+.statusbar{background:#1a1a2e;color:#fff;font-size:11px;padding:10px 18px 5px;display:flex;justify-content:space-between;flex-shrink:0;}
+.screen{flex:1;overflow-y:auto;background:#f5f5f0;scrollbar-width:none;}
+.screen::-webkit-scrollbar{display:none;}
+.topbar{background:#1a1a2e;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.topbar-title{font-size:15px;font-weight:500;}
+.topbar-sub{font-size:11px;opacity:.6;margin-top:1px;}
+.avatar{width:30px;height:30px;border-radius:50%;background:#3a3a6e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#aac;}
+.navbar{background:#1a1a2e;display:flex;flex-shrink:0;border-top:0.5px solid rgba(255,255,255,.1);}
+.ntab{flex:1;padding:8px 4px 11px;text-align:center;cursor:pointer;color:rgba(255,255,255,.35);font-size:10px;transition:color .15s;user-select:none;}
+.ntab.active{color:#7eb8f7;}
+.ntab svg{display:block;margin:0 auto 2px;}
 
-  header {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 48px 24px 0;
-  }
-
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: 12px;
-  }
-
-  h1 {
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: -.02em;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 8px;
-  }
-
-  .meta {
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 40px;
-  }
-
-  .legend {
-    max-width: 680px;
-    margin: 0 auto 36px;
-    padding: 0 24px;
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .legend-item {
-    font-size: 12px;
-    color: #666;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .stage {
-    max-width: 680px;
-    margin: 0 auto 48px;
-    padding: 0 24px;
-  }
-
-  .stage-title {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 0.5px solid #e0e0d8;
-  }
-
-  .phones {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .phone-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .phone-label {
-    font-size: 11px;
-    color: #999;
-    text-align: center;
-  }
-
-  /* ── Phone shell ─────────────────────────────────────── */
-  .phone {
-    width: 280px;
-    background: #fff;
-    border: 0.5px solid #d0d0c8;
-    border-radius: 36px;
-    overflow: hidden;
-    height: 580px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 16px rgba(0,0,0,.07);
-  }
-
-  .statusbar {
-    background: #1a1a2e;
-    color: #fff;
-    font-size: 10px;
-    padding: 7px 14px 3px;
-    display: flex;
-    justify-content: space-between;
-    flex-shrink: 0;
-  }
-
-  .screen {
-    flex: 1;
-    overflow-y: auto;
-    background: #f5f5f0;
-    scrollbar-width: none;
-  }
-  .screen::-webkit-scrollbar { display: none; }
-
-  .topbar {
-    background: #1a1a2e;
-    color: #fff;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-  }
-
-  .topbar-title { font-size: 14px; font-weight: 500; }
-  .topbar-sub { font-size: 10px; opacity: .6; margin-top: 1px; }
-
-  .avatar {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: #3a3a6e;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 500; color: #aac;
-  }
-
-  .navbar {
-    background: #1a1a2e;
-    display: flex;
-    flex-shrink: 0;
-    border-top: 0.5px solid rgba(255,255,255,.1);
-  }
-
-  .ntab {
-    flex: 1;
-    padding: 7px 3px 9px;
-    text-align: center;
-    cursor: pointer;
-    color: rgba(255,255,255,.35);
-    font-size: 9px;
-    transition: color .15s;
-    user-select: none;
-  }
-  .ntab.active { color: #7eb8f7; }
-  .ntab svg { display: block; margin: 0 auto 1px; }
-
-  /* ── Screen components ───────────────────────────────── */
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    border: 0.5px solid #e8e8e0;
-    margin: 7px 10px;
-    padding: 12px;
-  }
-  .card-sm { padding: 9px 12px; }
-
-  .lbl { font-size: 10px; color: #888; margin-bottom: 2px; }
-  .val { font-size: 19px; font-weight: 500; color: #1a1a1a; }
-  .val-sm { font-size: 13px; font-weight: 500; color: #1a1a1a; }
-
-  .section-hd {
-    font-size: 10px;
-    font-weight: 500;
-    color: #999;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    padding: 9px 14px 3px;
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    border-bottom: 0.5px solid #f0f0e8;
-  }
-  .row:last-child { border-bottom: none; }
-
-  .badge {
-    font-size: 9px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-  .badge-hi  { background: #D4EDDA; color: #155724; }
-  .badge-pend { background: #FFF3CD; color: #856404; }
-  .badge-info { background: #e8f0fe; color: #1a73e8; }
-
-  .tag-lbl { font-size: 12px; font-weight: 500; color: #1a1a1a; }
-  .tag-sub  { font-size: 10px; color: #888; }
-  .tag-val  { text-align: right; }
-  .pct      { font-size: 10px; color: #888; }
-
-  .erow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 12px;
-    cursor: pointer;
-    border-bottom: 0.5px solid #f0f0e8;
-    transition: background .1s;
-  }
-  .erow:last-child { border-bottom: none; }
-  .erow:hover { background: #fafaf7; }
-
-  .esub { background: #fafaf7; padding: 0 12px; }
-  .esub-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 8px 6px 14px;
-    border-bottom: 0.5px solid #f0f0e8;
-    font-size: 11px;
-    color: #555;
-  }
-  .esub-row:last-child { border-bottom: none; }
-
-  .arr { font-size: 9px; color: #bbb; margin-left: 5px; }
-
-  .total-card {
-    background: #1a1a2e;
-    border-radius: 10px;
-    margin: 7px 10px;
-    padding: 12px;
-    color: #fff;
-  }
-
-  .filter-bar {
-    display: flex;
-    gap: 5px;
-    padding: 8px 10px 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .filter-bar::-webkit-scrollbar { display: none; }
-
-  .fpill {
-    padding: 4px 11px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 0.5px solid #d0d0c8;
-    color: #777;
-    background: #fff;
-    white-space: nowrap;
-    transition: all .15s;
-    user-select: none;
-  }
-  .fpill.active { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
-
-  /* ── Comment section ─────────────────────────────────── */
-  .comments-section {
-    max-width: 680px;
-    margin: 0 auto 64px;
-    padding: 0 24px;
-  }
-
-  .comments-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: #999;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 0.5px solid #e0e0d8;
-  }
-
-  .utterances-note {
-    font-size: 13px;
-    color: #888;
-    background: #fff;
-    border: 0.5px solid #e0e0d8;
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
-
-  .utterances-note strong { color: #555; font-weight: 500; }
-
-  footer {
-    text-align: center;
-    font-size: 11px;
-    color: #bbb;
-    padding: 0 24px 40px;
-  }
+/* Screen components */
+.card{background:#fff;border-radius:12px;border:0.5px solid #e8e8e0;margin:8px 12px;padding:14px;}
+.card-sm{padding:10px 14px;}
+.lbl{font-size:11px;color:#888;margin-bottom:2px;}
+.val{font-size:20px;font-weight:500;color:#1a1a1a;}
+.val-sm{font-size:14px;font-weight:500;color:#1a1a1a;}
+.section-hd{font-size:11px;font-weight:500;color:#999;letter-spacing:.04em;text-transform:uppercase;padding:10px 16px 4px;}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:0.5px solid #f0f0e8;}
+.row:last-child{border-bottom:none;}
+.badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;}
+.badge-hi{background:#D4EDDA;color:#155724;}
+.badge-pend{background:#FFF3CD;color:#856404;}
+.badge-info{background:#e8f0fe;color:#1a73e8;}
+.tag-lbl{font-size:13px;font-weight:500;color:#1a1a1a;}
+.tag-sub{font-size:11px;color:#888;}
+.tag-val{text-align:right;}
+.pct{font-size:11px;color:#888;}
+.erow{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;cursor:pointer;border-bottom:0.5px solid #f0f0e8;}
+.erow:last-child{border-bottom:none;}
+.erow:active{background:#fafaf7;}
+.esub{background:#fafaf7;padding:0 14px;}
+.esub-row{display:flex;justify-content:space-between;padding:7px 8px 7px 16px;border-bottom:0.5px solid #f0f0e8;font-size:12px;color:#555;}
+.esub-row:last-child{border-bottom:none;}
+.arr{font-size:10px;color:#bbb;margin-left:5px;}
+.total-card{background:#1a1a2e;border-radius:12px;margin:8px 12px;padding:14px;color:#fff;}
+.filter-bar{display:flex;gap:6px;padding:10px 12px 4px;overflow-x:auto;scrollbar-width:none;}
+.filter-bar::-webkit-scrollbar{display:none;}
+.fpill{padding:5px 13px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid #ccc;color:#777;background:#fff;white-space:nowrap;transition:all .15s;user-select:none;}
+.fpill.active{background:#1a1a2e;color:#fff;border-color:#1a1a2e;}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="tag">BFCH · Kaiya App</div>
-  <h1>Mobile app mockup — v4</h1>
-  <p class="subtitle">Interactive prototype of the Kaiya wealth aggregator. Shows High-priority MVP features only. Data is illustrative.</p>
-  <p class="meta">Last updated: May 2026 &nbsp;·&nbsp; Phase 1 (read-only) &nbsp;·&nbsp; Mobile-first</p>
-</header>
+<div class="page-label">BFCH · Kaiya</div>
+<div class="page-title">Interactive app mockup</div>
+<div class="page-sub">Phase 1 MVP — tap through the screens</div>
 
-<div class="legend">
-  <div class="legend-item"><div class="dot" style="background:#1a1a2e;"></div>Live screens — click tabs to navigate</div>
-  <div class="legend-item"><div class="dot" style="background:#7eb8f7;"></div>Active tab</div>
-  <div class="legend-item"><div class="dot" style="background:#D4EDDA;border:0.5px solid #155724;"></div>Action required</div>
-  <div class="legend-item"><div class="dot" style="background:#FFF3CD;border:0.5px solid #856404;"></div>Pending</div>
-</div>
-
-<div class="stage">
-  <div class="stage-title">Four screens</div>
-  <div class="phones" id="phones-container">
-    <!-- phones injected by JS -->
+<div class="phone">
+  <div class="statusbar"><span>9:41</span><span>●●●</span></div>
+  <div id="topbar"></div>
+  <div class="screen" id="ksc"></div>
+  <div class="navbar">
+    <div class="ntab active" data-s="home" onclick="nav('home')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home
+    </div>
+    <div class="ntab" data-s="port" onclick="nav('port')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Portfolio
+    </div>
+    <div class="ntab" data-s="adv" onclick="nav('adv')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Advisory
+    </div>
+    <div class="ntab" data-s="info" onclick="nav('info')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Info
+    </div>
   </div>
 </div>
-
-<div class="comments-section">
-  <div class="comments-title">Feedback &amp; comments</div>
-  <div class="utterances-note">
-    <strong>How to leave a comment:</strong> Sign in with your GitHub account below. Comments are stored as GitHub Issues on the Kaiya repo — anyone with the link can read and reply.
-  </div>
-  <!-- utterances comment widget                                          -->
-  <!-- TODO: replace YOUR-GITHUB-USERNAME/YOUR-REPO with your actual repo -->
-  <script src="https://utteranc.es/client.js"
-          repo="YOUR-GITHUB-USERNAME/YOUR-REPO"
-          issue-term="pathname"
-          label="feedback"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-</div>
-
-<footer>Kaiya · BFCH · Confidential prototype</footer>
 
 <script>
-/* ── Data ─────────────────────────────────────────────── */
-let cur = 'CHF';
-const rates = { CHF:1, USD:1.12, EUR:1.02, HKD:8.76, SGD:1.52 };
-function fmt(v)  { return Math.round(v * rates[cur]).toLocaleString('en-US'); }
-function fmtM(v) { return (v * rates[cur] / 1e6).toFixed(1) + 'M'; }
+let cur='CHF', portFilter='all';
+const rates={CHF:1,USD:1.12,EUR:1.02,HKD:8.76,SGD:1.52};
+function fmt(v){return Math.round(v*rates[cur]).toLocaleString('en-US');}
+function fmtM(v){return (v*rates[cur]/1e6).toFixed(1)+'M';}
 
-const portData = {
-  all: {
-    total: 67055478, label: 'All structures', entity: null,
-    holdings: [
-      { id:'alt', name:'Alternatives',   val:32003982, pct:'47.7%', subs:[{n:'Aeolus Wind Fund III',v:18200000},{n:'PE Asia Growth',v:8600000},{n:'Real Assets LP',v:5203982}] },
-      { id:'eq',  name:'Equities',       val:21167556, pct:'31.6%', subs:[{n:'Global Equity Basket',v:12400000},{n:'US Tech ETF',v:5767556},{n:'EM Markets',v:3000000}] },
-      { id:'hld', name:'Crypto',         val:7446678,  pct:'11.1%', subs:[{n:'BTC (3.2 BTC)',v:4446678},{n:'ETH (12 ETH)',v:3000000}] },
-      { id:'csh', name:'Cash',           val:2218513,  pct:'3.3%',  subs:[{n:'UBS CHF',v:1200000},{n:'JB EUR',v:918513},{n:'Sygnum USD',v:100000}] },
-      { id:'fi',  name:'Fixed income',   val:345661,   pct:'0.5%',  subs:[{n:'Swiss Govt Bond 2028',v:345661}] }
-    ]
-  },
-  ppli: {
-    total: 47849643, label: 'Oliver Berger PPLI · Zurich Life', entity: 'Policy #LI-2021-4491',
-    holdings: [
-      { id:'alt', name:'Alternatives', val:32003982, pct:'66.9%', subs:[{n:'Aeolus Wind Fund III',v:18200000},{n:'PE Asia Growth',v:8600000},{n:'Real Assets LP',v:5203982}] },
-      { id:'eq',  name:'Equities',     val:15000000, pct:'31.3%', subs:[{n:'Global Equity Basket',v:12400000},{n:'US Tech ETF',v:2600000}] },
-      { id:'fi',  name:'Fixed income', val:345661,   pct:'0.7%',  subs:[{n:'Swiss Govt Bond 2028',v:345661}] },
-      { id:'csh', name:'Cash',         val:500000,   pct:'1.0%',  subs:[{n:'Policy cash account',v:500000}] }
-    ]
-  },
-  lie: {
-    total: 7386069, label: 'OB Family Foundation · Liechtenstein', entity: 'Est. 2019 · LGT Trustee',
-    holdings: [
-      { id:'eq',  name:'Equities', val:6167556, pct:'83.5%', subs:[{n:'US Tech ETF',v:3167556},{n:'EM Markets',v:3000000}] },
-      { id:'csh', name:'Cash',     val:1218513, pct:'16.5%', subs:[{n:'UBS CHF',v:700000},{n:'JB EUR',v:518513}] }
-    ]
-  },
-  direct: {
-    total: 11819766, label: 'Direct holdings', entity: 'Personal · APA accounts',
-    holdings: [
-      { id:'hld', name:'Crypto',    val:7446678, pct:'63.0%', subs:[{n:'BTC (3.2 BTC)',v:4446678},{n:'ETH (12 ETH)',v:3000000}] },
-      { id:'csh', name:'Cash · APA',val:2873088, pct:'24.3%', subs:[{n:'CHF current **** 4821',v:1673088},{n:'USD account **** 7203',v:1200000}] },
-      { id:'eq',  name:'Equities',  val:1500000, pct:'12.7%', subs:[{n:'Global Equity (direct)',v:1500000}] }
-    ]
-  }
+const portData={
+  all:{total:67055478,label:'All structures',entity:null,holdings:[
+    {id:'alt',name:'Alternatives',val:32003982,pct:'47.7%',subs:[{n:'Aeolus Wind Fund III',v:18200000},{n:'PE Asia Growth',v:8600000},{n:'Real Assets LP',v:5203982}]},
+    {id:'eq',name:'Equities',val:21167556,pct:'31.6%',subs:[{n:'Global Equity Basket',v:12400000},{n:'US Tech ETF',v:5767556},{n:'EM Markets',v:3000000}]},
+    {id:'hld',name:'Crypto',val:7446678,pct:'11.1%',subs:[{n:'BTC (3.2 BTC)',v:4446678},{n:'ETH (12 ETH)',v:3000000}]},
+    {id:'csh',name:'Cash',val:2218513,pct:'3.3%',subs:[{n:'UBS CHF',v:1200000},{n:'JB EUR',v:918513},{n:'Sygnum USD',v:100000}]},
+    {id:'fi',name:'Fixed income',val:345661,pct:'0.5%',subs:[{n:'Swiss Govt Bond 2028',v:345661}]}
+  ]},
+  ppli:{total:47849643,label:'Oliver Berger PPLI · Zurich Life',entity:'Policy #LI-2021-4491',holdings:[
+    {id:'alt',name:'Alternatives',val:32003982,pct:'66.9%',subs:[{n:'Aeolus Wind Fund III',v:18200000},{n:'PE Asia Growth',v:8600000},{n:'Real Assets LP',v:5203982}]},
+    {id:'eq',name:'Equities',val:15000000,pct:'31.3%',subs:[{n:'Global Equity Basket',v:12400000},{n:'US Tech ETF',v:2600000}]},
+    {id:'fi',name:'Fixed income',val:345661,pct:'0.7%',subs:[{n:'Swiss Govt Bond 2028',v:345661}]},
+    {id:'csh',name:'Cash',val:500000,pct:'1.0%',subs:[{n:'Policy cash account',v:500000}]}
+  ]},
+  lie:{total:7386069,label:'OB Family Foundation · Liechtenstein',entity:'Est. 2019 · LGT Trustee',holdings:[
+    {id:'eq',name:'Equities',val:6167556,pct:'83.5%',subs:[{n:'US Tech ETF',v:3167556},{n:'EM Markets',v:3000000}]},
+    {id:'csh',name:'Cash',val:1218513,pct:'16.5%',subs:[{n:'UBS CHF',v:700000},{n:'JB EUR',v:518513}]}
+  ]},
+  direct:{total:11819766,label:'Direct holdings',entity:'Personal · APA accounts',holdings:[
+    {id:'hld',name:'Crypto',val:7446678,pct:'63.0%',subs:[{n:'BTC (3.2 BTC)',v:4446678},{n:'ETH (12 ETH)',v:3000000}]},
+    {id:'csh',name:'Cash · APA',val:2873088,pct:'24.3%',subs:[{n:'CHF current **** 4821',v:1673088},{n:'USD account **** 7203',v:1200000}]},
+    {id:'eq',name:'Equities',val:1500000,pct:'12.7%',subs:[{n:'Global Equity (direct)',v:1500000}]}
+  ]}
 };
 
-const topbars = {
-  home: { title:'Good morning, Oliver', sub:'Saturday, 30 May 2026' },
-  port: { title:'Portfolio',            sub:'Live data · Qplix' },
-  adv:  { title:'Advisory',             sub:'' },
-  info: { title:'My Info',              sub:'Oliver Berger' }
+const topbars={
+  home:{title:'Good morning, Oliver',sub:'Saturday, 30 May 2026'},
+  port:{title:'Portfolio',sub:'Live data · Qplix'},
+  adv:{title:'Advisory',sub:''},
+  info:{title:'My Info',sub:'Oliver Berger'}
 };
 
-/* ── Screen renderers ─────────────────────────────────── */
-function screenHome() {
-  return `
+const S={
+  home(){return`
     <div class="section-hd">Open tasks</div>
     <div class="card card-sm">
       <div class="row"><div><div class="tag-lbl">BTC → PPLI conversion</div><div class="tag-sub">Approve transfer docs</div></div><span class="badge badge-hi">Action</span></div>
@@ -431,178 +130,120 @@ function screenHome() {
     </div>
     <div class="section-hd">Recent documents</div>
     <div class="card card-sm">
-      <div class="row"><div><div class="tag-lbl" style="font-size:11px;">Q1 2026 Portfolio Report</div><div class="tag-sub">PDF · 2.1 MB · 28 May</div></div><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-      <div class="row"><div><div class="tag-lbl" style="font-size:11px;">PPLI Policy Statement</div><div class="tag-sub">PDF · 890 KB · 14 May</div></div><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+      <div class="row"><div><div class="tag-lbl" style="font-size:12px;">Q1 2026 Portfolio Report</div><div class="tag-sub">PDF · 2.1 MB · 28 May</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+      <div class="row"><div><div class="tag-lbl" style="font-size:12px;">PPLI Policy Statement</div><div class="tag-sub">PDF · 890 KB · 14 May</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
     </div>
     <div class="section-hd">Total wealth</div>
     <div class="total-card">
-      <div style="font-size:10px;opacity:.5;margin-bottom:3px;">${cur} · All structures</div>
-      <div style="font-size:23px;font-weight:500;">${cur} ${fmtM(67055478)}</div>
-      <div style="font-size:10px;margin-top:5px;opacity:.5;">↑ +2.3% YTD · Last updated: today</div>
+      <div style="font-size:11px;opacity:.5;margin-bottom:4px;">${cur} · All structures</div>
+      <div style="font-size:26px;font-weight:500;">${cur} ${fmtM(67055478)}</div>
+      <div style="font-size:11px;margin-top:6px;opacity:.5;">↑ +2.3% YTD · Last updated: today</div>
     </div>
-    <div style="height:8px;"></div>`;
-}
+    <div style="height:8px;"></div>`;},
 
-function screenPort(filter) {
-  const d = portData[filter];
-  const pills = ['all','ppli','lie','direct'].map(k =>
-    `<div class="fpill${filter===k?' active':''}" onclick="setFilter('${k}',this)">${k==='all'?'All':k==='ppli'?'PPLI':k==='lie'?'LIE':'Direct'}</div>`
-  ).join('');
-  const rows = d.holdings.map(h => `
-    <div class="erow" data-tog="${filter+h.id}">
-      <div><span class="tag-lbl">${h.name}</span><span class="arr" id="arr-${filter+h.id}">▶</span></div>
-      <div class="tag-val"><div class="val-sm">${cur} ${fmt(h.val)}</div><div class="pct">${h.pct}</div></div>
-    </div>
-    <div id="exp-${filter+h.id}" style="display:none" class="esub">
-      ${h.subs.map(s=>`<div class="esub-row"><span>${s.n}</span><span>${cur} ${fmt(s.v)}</span></div>`).join('')}
-    </div>`).join('');
-  return `
+  port(){
+    const d=portData[portFilter];
+    const pills=['all','ppli','lie','direct'].map(k=>
+      `<div class="fpill${portFilter===k?' active':''}" onclick="setFilter('${k}')">${k==='all'?'All':k==='ppli'?'PPLI':k==='lie'?'LIE':'Direct'}</div>`
+    ).join('');
+    const rows=d.holdings.map(h=>`
+      <div class="erow" data-tog="${h.id}">
+        <div><span class="tag-lbl">${h.name}</span><span class="arr" id="arr-${h.id}">▶</span></div>
+        <div class="tag-val"><div class="val-sm">${cur} ${fmt(h.val)}</div><div class="pct">${h.pct}</div></div>
+      </div>
+      <div id="exp-${h.id}" style="display:none" class="esub">
+        ${h.subs.map(s=>`<div class="esub-row"><span>${s.n}</span><span>${cur} ${fmt(s.v)}</span></div>`).join('')}
+      </div>`).join('');
+    return`
     <div class="filter-bar">${pills}</div>
-    ${d.entity ? `<div style="padding:2px 14px 3px;font-size:10px;color:#888;">${d.entity}</div>` : ''}
-    <div class="card" style="margin-bottom:0;border-radius:10px 10px 0 0;">
+    ${d.entity?`<div style="padding:2px 16px 4px;font-size:11px;color:#888;">${d.entity}</div>`:''}
+    <div class="card" style="margin-bottom:0;border-radius:12px 12px 0 0;">
       <div class="lbl">${d.label}</div>
       <div class="val">${cur} ${fmtM(d.total)}</div>
     </div>
-    <div style="background:#fff;margin:0 10px;border:0.5px solid #e8e8e0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;">${rows}</div>
-    <div style="height:8px;"></div>`;
-}
+    <div style="background:#fff;margin:0 12px;border:0.5px solid #e8e8e0;border-top:none;border-radius:0 0 12px 12px;overflow:hidden;">${rows}</div>
+    <div style="height:8px;"></div>`;},
 
-function screenAdv() {
-  return `
+  adv(){return`
     <div class="section-hd">Messages</div>
     <div class="card card-sm">
-      <div class="row"><div><div class="tag-lbl">Sarah M. — Relationship Manager</div><div class="tag-sub">BTC workflow update — 29 May</div></div><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div class="row"><div><div class="tag-lbl">Sarah M. — Relationship Manager</div><div class="tag-sub">BTC workflow update — 29 May</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
       <div class="row"><div><div class="tag-lbl">BFCH Team</div><div class="tag-sub">Q1 review call — 14 May</div></div></div>
     </div>
     <div class="section-hd">BTC → PPLI workflow</div>
     <div class="card card-sm">
       ${[['Sell BTC at Sygnum','Done'],['FX to CHF','Done'],['Wire to APA','In progress'],['Subscribe into PPLI','Pending']].map(([s,t],i)=>`
-      <div style="display:flex;align-items:center;gap:9px;padding:6px 0;${i<3?'border-bottom:0.5px solid #f0f0e8':''}">
-        <div style="width:18px;height:18px;border-radius:50%;background:${t==='Done'?'#D4EDDA':t==='In progress'?'#FFF3CD':'#f5f5f0'};display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;">${t==='Done'?'✓':t==='In progress'?'…':''}</div>
-        <div><div class="tag-lbl" style="font-size:11px;">${s}</div><div class="tag-sub">${t}</div></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;${i<3?'border-bottom:0.5px solid #f0f0e8':''}">
+        <div style="width:20px;height:20px;border-radius:50%;background:${t==='Done'?'#D4EDDA':t==='In progress'?'#FFF3CD':'#f0f0e8'};display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;">${t==='Done'?'✓':t==='In progress'?'…':''}</div>
+        <div><div class="tag-lbl" style="font-size:12px;">${s}</div><div class="tag-sub">${t}</div></div>
       </div>`).join('')}
     </div>
-    <div style="height:8px;"></div>`;
-}
+    <div style="height:8px;"></div>`;},
 
-function screenInfo() {
-  const opts = ['CHF','USD','EUR','HKD','SGD'].map(c =>
-    `<option value="${c}"${cur===c?' selected':''}>${c}</option>`).join('');
-  return `
-    <div class="card" style="display:flex;align-items:center;gap:10px;">
-      <div style="width:40px;height:40px;border-radius:50%;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#aac;">OB</div>
-      <div><div style="font-size:14px;font-weight:500;color:#1a1a1a;">Oliver Berger</div><div class="tag-sub">Client since 2018 · HNWI</div></div>
+  info(){return`
+    <div class="card" style="display:flex;align-items:center;gap:12px;">
+      <div style="width:44px;height:44px;border-radius:50%;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#aac;">OB</div>
+      <div><div style="font-size:15px;font-weight:500;color:#1a1a1a;">Oliver Berger</div><div class="tag-sub">Client since 2018 · HNWI</div></div>
     </div>
     <div class="section-hd">Display currency</div>
     <div class="card card-sm">
       <div style="display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;color:#1a1a1a;">Currency</span>
-        <select id="cur-sel-${phoneId}" onchange="changeCurrency(this.value)" style="font-size:12px;padding:3px 7px;border-radius:5px;border:0.5px solid #ccc;background:#f5f5f0;color:#1a1a1a;">${opts}</select>
+        <span style="font-size:13px;color:#1a1a1a;">Currency</span>
+        <select id="cur-sel" style="font-size:13px;padding:4px 8px;border-radius:6px;border:0.5px solid #ccc;background:#f5f5f0;color:#1a1a1a;">
+          <option value="CHF">CHF – Swiss Franc</option>
+          <option value="USD">USD – US Dollar</option>
+          <option value="EUR">EUR – Euro</option>
+          <option value="HKD">HKD – Hong Kong Dollar</option>
+          <option value="SGD">SGD – Singapore Dollar</option>
+        </select>
       </div>
+    </div>
+    <div class="section-hd">Notifications</div>
+    <div class="card card-sm">
+      <div class="row"><span style="font-size:13px;">Tasks &amp; actions</span><div style="width:36px;height:20px;border-radius:10px;background:#1a1a2e;position:relative;"><div style="width:16px;height:16px;border-radius:50%;background:#fff;position:absolute;top:2px;right:2px;"></div></div></div>
+      <div class="row"><span style="font-size:13px;">New messages</span><div style="width:36px;height:20px;border-radius:10px;background:#1a1a2e;position:relative;"><div style="width:16px;height:16px;border-radius:50%;background:#fff;position:absolute;top:2px;right:2px;"></div></div></div>
+      <div class="row"><span style="font-size:13px;">Portfolio updates</span><div style="width:36px;height:20px;border-radius:10px;background:#eee;border:0.5px solid #ccc;position:relative;"><div style="width:16px;height:16px;border-radius:50%;background:#aaa;position:absolute;top:2px;left:2px;"></div></div></div>
     </div>
     <div class="section-hd">Contact</div>
     <div class="card card-sm">
-      <div class="row" style="padding:5px 12px;"><span class="tag-sub">Email</span><span style="font-size:11px;">o.berger@email.com</span></div>
-      <div class="row" style="padding:5px 12px;"><span class="tag-sub">KYC status</span><span class="badge badge-pend">Renewal due</span></div>
+      <div class="row"><span class="tag-sub">Email</span><span style="font-size:12px;">o.berger@email.com</span></div>
+      <div class="row"><span class="tag-sub">KYC status</span><span class="badge badge-pend">Renewal due</span></div>
     </div>
-    <div style="height:8px;"></div>`;
+    <div style="height:8px;"></div>`;}
+};
+
+function setFilter(f){
+  portFilter=f;
+  document.getElementById('ksc').innerHTML=S.port();
+  wireExpand();
 }
 
-/* ── Phone factory ────────────────────────────────────── */
-let phoneId = 0;
-const phoneStates = {};
-
-function makePhone(initScreen) {
-  const id = ++phoneId;
-  phoneStates[id] = { screen: initScreen, filter: 'all' };
-
-  const wrap = document.createElement('div');
-  wrap.className = 'phone-wrap';
-
-  const label = document.createElement('div');
-  label.className = 'phone-label';
-  label.textContent = initScreen.charAt(0).toUpperCase() + initScreen.slice(1);
-  wrap.appendChild(label);
-
-  const phone = document.createElement('div');
-  phone.className = 'phone';
-  phone.id = 'phone-' + id;
-  phone.innerHTML = `
-    <div class="statusbar"><span>9:41</span><span>●●●</span></div>
-    <div id="tb-${id}" class="topbar"></div>
-    <div class="screen" id="sc-${id}"></div>
-    <div class="navbar" id="nb-${id}">
-      ${['home','port','adv','info'].map(s => `
-        <div class="ntab${s===initScreen?' active':''}" id="nt-${id}-${s}" onclick="phoneNav(${id},'${s}')">
-          ${ s==='home' ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Home`
-           : s==='port' ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Portfolio`
-           : s==='adv'  ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Advisory`
-           :               `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Info` }
-        </div>`).join('')}
-    </div>`;
-  wrap.appendChild(phone);
-
-  phoneNav(id, initScreen);
-  return wrap;
-}
-
-function phoneNav(id, s) {
-  phoneStates[id].screen = s;
-  const tb = topbars[s];
-  document.getElementById('tb-' + id).innerHTML =
-    `<div style="display:flex;align-items:center;justify-content:space-between;">
-       <div><div class="topbar-title">${tb.title}</div>${tb.sub?`<div class="topbar-sub">${tb.sub}</div>`:''}</div>
-       <div class="avatar">OB</div>
-     </div>`;
-  const sc = document.getElementById('sc-' + id);
-  if (s === 'home') sc.innerHTML = screenHome();
-  else if (s === 'port') { phoneStates[id].filter = phoneStates[id].filter||'all'; sc.innerHTML = screenPort(phoneStates[id].filter); wireExpand(id, phoneStates[id].filter); }
-  else if (s === 'adv')  sc.innerHTML = screenAdv();
-  else if (s === 'info') sc.innerHTML = screenInfo();
-  document.querySelectorAll(`#nb-${id} .ntab`).forEach(t =>
-    t.classList.toggle('active', t.id === `nt-${id}-${s}`));
-}
-
-function setFilter(f, el) {
-  // find parent phone
-  const nb = el.closest('.navbar');
-  const phone = el.closest('.phone');
-  if (!phone) return;
-  const id = parseInt(phone.id.replace('phone-',''));
-  phoneStates[id].filter = f;
-  const sc = document.getElementById('sc-' + id);
-  sc.innerHTML = screenPort(f);
-  wireExpand(id, f);
-}
-
-function wireExpand(phoneId, filter) {
-  const sc = document.getElementById('sc-' + phoneId);
-  sc.addEventListener('click', function handler(e) {
-    const tog = e.target.closest('[data-tog]');
-    if (tog) {
-      const key = tog.dataset.tog;
-      const exp = document.getElementById('exp-' + key);
-      const arr = document.getElementById('arr-' + key);
-      if (exp) {
-        const open = exp.style.display !== 'none';
-        exp.style.display = open ? 'none' : 'block';
-        if (arr) arr.textContent = open ? '▶' : '▼';
-      }
+function wireExpand(){
+  document.getElementById('ksc').addEventListener('click',function(e){
+    const tog=e.target.closest('[data-tog]');
+    if(tog){
+      const id=tog.dataset.tog,exp=document.getElementById('exp-'+id),arr=document.getElementById('arr-'+id);
+      if(exp){const open=exp.style.display!=='none';exp.style.display=open?'none':'block';if(arr)arr.textContent=open?'▶':'▼';}
     }
-  });
+  },{once:true});
 }
 
-function changeCurrency(val) {
-  cur = val;
-  // re-render all phones
-  Object.keys(phoneStates).forEach(id => {
-    phoneNav(parseInt(id), phoneStates[id].screen);
-  });
+function nav(s){
+  document.querySelectorAll('.ntab').forEach(t=>t.classList.toggle('active',t.dataset.s===s));
+  const tb=topbars[s];
+  document.getElementById('topbar').innerHTML=`<div class="topbar"><div><div class="topbar-title">${tb.title}</div>${tb.sub?`<div class="topbar-sub">${tb.sub}</div>`:''}</div><div class="avatar">OB</div></div>`;
+  document.getElementById('ksc').innerHTML=S[s]();
+  if(s==='port')wireExpand();
+  if(s==='info'){
+    const sel=document.getElementById('cur-sel');
+    if(sel){
+      sel.value=cur;
+      sel.addEventListener('change',function(){cur=this.value;nav('info');});
+    }
+  }
 }
 
-/* ── Init: one phone per screen ──────────────────────── */
-const container = document.getElementById('phones-container');
-['home','port','adv','info'].forEach(s => container.appendChild(makePhone(s)));
+nav('home');
 </script>
 </body>
 </html>
